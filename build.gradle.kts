@@ -22,17 +22,34 @@ repositories {
 extra["springModulithVersion"] = "1.2.0"
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-web")
+
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.springframework.modulith:spring-modulith-starter-core")
-    implementation("org.springframework.modulith:spring-modulith-starter-jpa")
-    runtimeOnly("com.mysql:mysql-connector-j")
+
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-    testImplementation("org.springframework.modulith:spring-modulith-starter-test")
+
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+
+    // jpa
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtimeOnly("com.mysql:mysql-connector-j")
+
+    // web
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // spring modulith
+    implementation("org.springframework.modulith:spring-modulith-starter-core")
+    implementation("org.springframework.modulith:spring-modulith-starter-jpa")
+    testImplementation("org.springframework.modulith:spring-modulith-starter-test")
+
+    // swagger
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+
+    // kotlin logger
+    implementation("io.github.oshai:kotlin-logging-jvm:5.1.0")
 }
 
 dependencyManagement {

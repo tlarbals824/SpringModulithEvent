@@ -1,1 +1,18 @@
-spring.application.name=SpringModulithEvent
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/modulith
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+
+  modulith:
+    events:
+      jdbc:
+        schema-initialization:
+          enabled: true

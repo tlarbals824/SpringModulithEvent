@@ -1,4 +1,10 @@
 package com.sim.springmodulithevent.common
 
-class ModelIdGenerator {
+import java.util.*
+
+object ModelIdGenerator {
+
+    fun generateId(): String{
+        return UUID.randomUUID().toString()
+    }
 }

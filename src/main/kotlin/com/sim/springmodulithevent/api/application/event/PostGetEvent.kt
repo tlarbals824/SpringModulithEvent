@@ -1,4 +1,10 @@
-package com.sim.springmodulithevent.api.event
+package com.sim.springmodulithevent.api.application.event
 
-class PostGetEvent {
+import com.sim.springmodulithevent.common.ModelIdGenerator
+import java.util.UUID
+
+data class PostGetEvent(
+    val id: String,
+    val userId: String = ModelIdGenerator.generateId()
+) {
 }
