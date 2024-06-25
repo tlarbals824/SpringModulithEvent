@@ -6,4 +6,6 @@ interface PostRepository {
     fun findById(id: String): Post?
 
     fun getViewCount(id: String): Int
+
+    fun incrementViewCount(id: String)
 }

@@ -20,4 +20,8 @@ class PostRepositoryImpl(
     override fun getViewCount(id: String): Int {
         return postJpaRepository.findByIdOrNull(id)?.viewCount ?: 0
     }
+
+    override fun incrementViewCount(id: String) {
+        postJpaRepository.incrementViewCountById(id)
+    }
 }

@@ -1,8 +1,13 @@
 package com.sim.springmodulithevent.event
 
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.modulith.events.IncompleteEventPublications
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
+import java.time.Clock
+import java.time.LocalDateTime
+
+private val logger = KotlinLogging.logger {  }
 
 @Component
 class IncompleteEventRepublicationHandler(
@@ -10,7 +15,7 @@ class IncompleteEventRepublicationHandler(
 ) {
 
     // 매 분마다 실행
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(cron = "0 0 * * * ?")
     fun resubmitIncompletePublications() {
         applicationEventMulticaster.resubmitIncompletePublications { true }
     }
